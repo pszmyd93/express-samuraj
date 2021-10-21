@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+  h1= title
+  a(href="/admin/news/add") Dodaj 
+  table 
+    tr 
+      th id
+      th tytuł
+      th data dodania
+      th akcja 
+    each item, index in objects
+      tr 
+        td=index 
+        td=item.title
+        td=item.created
+          a(href=`/admin/news/delete/${item._id}`) usun 
